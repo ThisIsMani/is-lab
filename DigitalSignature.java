@@ -8,7 +8,8 @@ public class DigitalSignature {
         KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
         kpg.initialize(1024);
         KeyPair keyPair = kpg.genKeyPair();
-        byte[] data = "Sample Text".getBytes("UTF8");
+        String input = "Mani Chandra";
+        byte[] data = input.getBytes("UTF8");
         Signature sig = Signature.getInstance("MD5WithRSA");
         sig.initSign(keyPair.getPrivate());
         sig.update(data);
